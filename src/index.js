@@ -3,10 +3,37 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'antd/dist/antd.css';
+import 'leaflet/dist/leaflet.css';
+
+import { usePromiseTracker } from "react-promise-tracker";
+import Loader from 'react-loader-spinner';
+
+const LoadingIndicator = props => {
+  const { promiseInProgress } = usePromiseTracker();
+   return (
+    promiseInProgress && 
+    <div className="overlay"
+      style={{
+        position: "absolute",
+        top: "45%",
+        width: "100%",
+        height: "100",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+      }}
+    >
+      <Loader id="loading-gif-image" type="ThreeDots" color="#1a75bd" height="100" width="100" />
+    </div>
+  );  
+}
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <LoadingIndicator />
   </React.StrictMode>,
   document.getElementById('root')
 );
