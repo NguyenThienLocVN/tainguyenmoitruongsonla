@@ -1,39 +1,7 @@
 import React from 'react';
-import { trackPromise } from 'react-promise-tracker';
-import axios from "axios";
 import { Link } from 'react-router-dom';
-import configData from "../../../config.json";
-// import { getToken } from '../../../DungChung/Auth';
 
 export default class QuanLyCapPhepCapMoiGiayPhepKTNDD extends React.Component {
-    constructor(props)
-    {
-        super(props)
-        this.state = {
-            countLicense: [],
-        }
-    }
-
-    // componentDidMount(){
-    //     trackPromise(
-    //         axios
-    //         .get(configData.API_URL + "/quan-ly-cap-phep/nuoc-duoi-dat/dem-giay-phep", {
-    //             headers: {'Authorization': 'Bearer ' + getToken()}
-    //         })
-    //         .then((response) => {
-    //             if(response.status === 200)
-    //             {
-    //                 this.setState({
-    //                     countLicense: response.data.gp_ktsdnuocduoidat,
-    //                 });
-    //             }
-    //         })
-    //         .catch((error) => {
-    //             this.setState({msg: error.response})
-    //         })
-    //     )
-    // }
-
     render(){
         return(
             <div className="col-12 px-2 pb-4">
