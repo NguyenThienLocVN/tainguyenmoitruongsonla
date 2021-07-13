@@ -3,18 +3,19 @@ import React from 'react';
 import Header from '../../../../DungChung/Header';
 
 // import file dem so giay phep
-import DemGiayPhep from '../DemGiayPhep';
+import DemGiayPhep from './01_DEMGIAYPHEP/DemGiayPhep';
 
 // import table
-import { ConfigProvider, Table, Input } from 'antd';
+import DanhSach from './02_DANHSACH/DanhSach';
 
 // import map
 import { MapContainer } from "react-leaflet";
 import { BasemapLayer } from "react-esri-leaflet";
-import vnVN from 'antd/lib/locale/vi_VN';
 import * as L from 'leaflet';
 import * as esri from 'esri-leaflet';
 import icon from '../../../../DungChung/marker.png';
+
+import {Input} from 'antd';
 
 
 
@@ -186,20 +187,7 @@ export default class CapPhepNuocDuoiDatKhaiThac extends React.Component {
                                 </div>
                                 {/* Ket thuc o tim kiem */}
                                 {/* Bang du lieu */}
-                                <div className="table-responsive">
-                                    <ConfigProvider locale={vnVN}>
-                                        <Table  className="table table-sm table-bordered col-12 table-hover text-center" 
-                                            columns={columns} 
-                                            loading={this.state.loading}
-                                            onChange={() => this.handleTableChange}
-                                            dataSource={this.state.dataSource}
-                                            rowKey="id" 
-                                            pagination={{
-                                            showTotal: (total, range) => `Tất cả ${total} bản ghi`,
-                                                current: this.state.currentPage,
-                                                pageSize: 10}}/>
-                                    </ConfigProvider>
-                                </div>
+                                <DanhSach />
                                 {/* Ket thuc bang du lieu */}
                             </div>
                         </div>
